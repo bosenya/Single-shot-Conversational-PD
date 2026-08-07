@@ -26,10 +26,10 @@ payoff_settings = [
 ###########
 ## Model ##
 models = [
-    ## "gpt-4.1-mini",
+    "gpt-4.1-mini",
     ## "gpt-5-mini",
     ## "gpt-4.1",
-    "gpt-4o",
+    ## "gpt-4o",
     ## "gpt-5.5"
 ]
 
