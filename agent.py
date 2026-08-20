@@ -15,7 +15,3 @@ def get_key(API_key):
     if key is None:
         raise ValueError(f"KEY FAILED: {API_key}")
     return key
-
-def llm_input(agent, prompt):
-    response = agent.client.responses.create(model = agent.model, input = prompt)
-    return response.output_text.strip()

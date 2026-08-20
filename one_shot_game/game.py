@@ -1,20 +1,16 @@
-from agent import llm_input
+from one_shot_game.llm_input import llm_input
 
 ACTION_NAME = {0: "C", 1: "D"}
 
 def payoff_text(payoff):
     lines = []
-
     for (a0, a1), (p0, p1) in payoff.matrix.items():
-        lines.append(
-            f"- ({ACTION_NAME[a0]}, {ACTION_NAME[a1]}) -> ({p0}, {p1})"
-        )
+        lines.append(f"- ({ACTION_NAME[a0]}, {ACTION_NAME[a1]}) -> ({p0}, {p1})")
 
     return "\n".join(lines)
 
 def get_payoff(action0: int, action1: int, payoff):
     return payoff.get_payoff(action0, action1)
-
 
 def cd_decode(num):
     if num == 0: return "C"
@@ -108,4 +104,3 @@ def match(P0, P1, conversation, payoff):
         
     return (message_0, message_1, cd_decode(action_0), cd_decode(action_1), payoff_0, payoff_1)
             
-        
